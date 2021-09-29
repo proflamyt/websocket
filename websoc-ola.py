@@ -8,8 +8,9 @@ import websockets
 
 
 async def echo(websocket, path):
-    async for message in websocket:
-        await websocket.send(message)
+    while True:
+        async for message in websocket:
+            await websocket.send(message)
 
 
 async def main():
