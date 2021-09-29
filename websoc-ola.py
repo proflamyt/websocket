@@ -9,9 +9,9 @@ import websockets
 
 async def echo(websocket, path):
     while True:
-        async for message in websocket:
-            await websocket.send(message)
-
+        #can only emit string
+        await websocket.send('ola')
+        await asyncio.sleep(1)
 
 async def main():
     # Set the stop condition when receiving SIGTERM.
